@@ -1,0 +1,32 @@
+#nop https://tintinplusplus-unoffical-documentation.readthedocs.io
+
+#prompt {%1h, %2m, %3e, %4w %5-} {<088>- <128>%1h<088> | <148>%2m<088> | <138>%3e<088> | <158>%4w<088> --- ( <018>%5<088> ) -}
+
+#alias q  {quest}
+#alias ql {q log}
+#alias qd {q %1 details}
+
+#alias connect {#session achaea achaea.com 23;}
+#alias reload {
+  #kill {all};
+  #showme <faa>Reloading ...;
+  #read achaea.tin;
+}
+
+#act {Password correct. Welcome to Achaea.} {#config {command echo} {on}}
+
+#gag {~^\e[0;1;[30|31|32|33|34|35|36|37]m\e[1;[30|31|32|33|34|35|36|37]m^}
+#gag {~^\e[0;[30|31|32|33|34|35|36|37]m\e[[30|31|32|33|34|35|36|37]m^}
+
+#split 1 1
+#config {repeat char}   {!}
+#config {repeat enter}  {off}
+#config {tintin char}   {#}
+#config {command echo}  {off}
+#config {speedwalk}     {off}
+#config {verbatim char} {\}
+#config {log}           {html}
+#config {mccp}          {on}
+#config {buffer size}   {1000000}
+#config {history size}  {2000}
+#config {wordwrap} on
