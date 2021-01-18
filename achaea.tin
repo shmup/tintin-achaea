@@ -1,3 +1,6 @@
+#nop https://tintin.mudhalla.net/manual/
+#nop https://tintinplusplus-unoffical-documentation.readthedocs.io/
+
 #prompt {%1h, %2m, %3e, %4w %5-} {
   <fff>  ▶
   <ade><188>%1
@@ -10,10 +13,11 @@
 }
 
 #alias sl {show level}
-#alias ll {ih}
+#alias ll {info here}
 #alias q {#if {%1} {quest %1 details}; #else quest log;}
 #alias connect {#session achaea achaea.com 23;}
 #alias reload  {#kill all; #read achaea.tin; #config {command echo} {on}}
+
 #act {Password correct. Welcome to Achaea.} {#config {command echo} {on}}
 
 #split 1 1
@@ -29,14 +33,16 @@
 #config {history size}  {2000}
 #config {wordwrap} on
 
+#nop CAW! https://freesound.org/people/inchadney/sounds/124925/
 #alias alert {#system {afplay assets/caw1.wav}}
-
-#act {You cease your meditation having achieved full will and mana.} {
-  alert
-}
-
-#act {Your mental prowess is already swollen to its maximum.} {
-  alert
+#foreach {
+  {You cease your meditation having achieved full will and mana.}
+  {Your mental prowess is already swollen to its maximum.}
+  {You open your eyes and stretch languidly, feeling deliciously well-rested.}
+  {You open your eyes and yawn mightily.}
+  {You open your eyes and stretch languidly, feeling deliciously well-rested.}
+} {msg} {
+    #line substitute variables #act {$msg} {alert};
 }
 
 #nop needed for highlighting
@@ -45,6 +51,6 @@
 #gag {~^\e[0;1;[30|31|32|33|34|35|36|37]m\e[1;[30|31|32|33|34|35|36|37]m^}
 #gag {~^\e[0;[30|31|32|33|34|35|36|37]m\e[[30|31|32|33|34|35|36|37]m^}
 
-#nop https://tintinplusplus-unoffical-documentation.readthedocs.io
-#nop https://tintin.mudhalla.net/manual/
-#nop http://ix.io/2MoR
+#alias music {#system {afplay $(find -s soundtracks -name "*.mp3" | fzy) &}}
+
+#nop http://ix.io/2MoR/
