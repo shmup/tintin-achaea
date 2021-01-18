@@ -9,6 +9,7 @@
   <088>
 }
 
+#alias sl {show level}
 #alias ll {ih}
 #alias q {#if {%1} {quest %1 details}; #else quest log;}
 #alias connect {#session achaea achaea.com 23;}
@@ -28,8 +29,14 @@
 #config {history size}  {2000}
 #config {wordwrap} on
 
+#alias alert {#system {afplay assets/caw1.wav}}
+
 #act {You cease your meditation having achieved full will and mana.} {
-  #system {say -v veena mana}
+  alert
+}
+
+#act {Your mental prowess is already swollen to its maximum.} {
+  alert
 }
 
 #nop needed for highlighting
