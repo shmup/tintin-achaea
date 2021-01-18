@@ -12,6 +12,8 @@
 1. tt++ achaea.tin
 2. type `connect` to start a session to <achea.com>
 3. make changes to achaea.tin and type `reload` to load them
+
+In game read `config mapshow`. I like `config mapshow on`
 --------------------------------------------------------------
 "It's a very real world and very fascinating."
   - G4/TechTV
