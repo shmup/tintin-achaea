@@ -1,2 +1,3 @@
-soundtracks/*
+soundscapes/*
+!soundscapes/.keep
 .DS_Store

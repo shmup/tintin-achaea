@@ -60,6 +60,6 @@
 #gag {~^\e[0;1;[30|31|32|33|34|35|36|37]m\e[1;[30|31|32|33|34|35|36|37]m^}
 #gag {~^\e[0;[30|31|32|33|34|35|36|37]m\e[[30|31|32|33|34|35|36|37]m^}
 
-#alias music {#system {afplay $(find -s soundtracks -name "*.mp3" | fzy) &}}
+#alias music {#system {afplay $(find -s soundscapes -name "*.mp3" | fzy) &}}
 
 #nop http://ix.io/2MoR/
