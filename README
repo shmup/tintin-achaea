@@ -9,13 +9,19 @@
       ░  ░   ░     ░ ░       ░  ░  ░      ░  ░   ░  ░     ░  ░
                    ░
 --------------------------------------------------------------
-1. tt++ achaea.tin
-2. type `connect` to start a session to <achea.com>
-3. make changes to achaea.tin and type `reload` to load them
+INSTRUCTIONS
 
-In game read `config mapshow`. I like `config mapshow on`
+1. tt++ achaea.tin to start a new session
+3. make changes to achaea.tin and type reload to load them
+
 --------------------------------------------------------------
-Expressive Shorthand
+THOUGHTS
+
+I like to see the map updated when I move by enabling:
+  - CONFIG MAPSHOW ON
+
+--------------------------------------------------------------
+EXPRESSIVENESS
 
 <say|tell|reply|newbie|etc> <message here> <emoticon>
 
@@ -40,6 +46,7 @@ Expressive Shorthand
 :(  frowns and says
 :C  very sadly says
 D:  looks horrified and says
+
 --------------------------------------------------------------
 "It's a very real world and very fascinating."
   - G4/TechTV
