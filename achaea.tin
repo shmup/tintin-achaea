@@ -1,6 +1,12 @@
 #nop https://tintin.mudhalla.net/manual/
 #nop https://tintinplusplus-unoffical-documentation.readthedocs.io/
 
+#event {PROGRAM START} {connect}
+
+#alias connect {#session achaea achaea.com 23;}
+#alias reload  {#kill all; #read achaea.tin; #config {command echo} {on}}
+#act {Password correct. Welcome to Achaea.} {#config {command echo} {on}}
+
 #prompt {%1h, %2m, %3e, %4w %5-} {
   <fff>  ▶
   <ade><188>%1
@@ -13,15 +19,10 @@
 }
 
 #alias eld {eldritchmists}
-
 #alias dir {directory}
 #alias sl {show level}
 #alias ll {info here}
 #alias q {#if {%1} {quest %1 details}; #else quest log;}
-
-#event {PROGRAM START} {#session achaea achaea.com 23;}
-#alias reload  {#kill all; #read achaea.tin; #config {command echo} {on}}
-#act {Password correct. Welcome to Achaea.} {#config {command echo} {on}}
 
 #split 1 1
 #config {repeat char}   {!}
@@ -37,26 +38,30 @@
 #config {wordwrap} on
 
 #nop CAW! https://freesound.org/people/inchadney/sounds/124925/
-#alias alert {#system {afplay assets/caw1.wav}}
+#alias caw {#system {afplay assets/caw1.wav}}
 #foreach {
   {You cease your meditation having achieved full will and mana.}
   {Your mental prowess is already swollen to its maximum.}
   {You open your eyes and stretch languidly, feeling deliciously well-rested.}
   {You open your eyes and yawn mightily.}
-  {You open your eyes and stretch languidly, feeling deliciously well-rested.}
 } {msg} {
-    #line substitute variables #act {$msg} {alert};
+    #line substitute variables #act {$msg} {caw};
+}
+
+#alias hud {
+  #showme {-----------------};
+  show level;
+  show gold;
+  areas;
 }
 
 #act {You will TIMEOUT in 1 minute unless you do something.} {
-  show level
-  show gold
-  alert
+  hud;
 }
 
 #nop needed for highlighting
 #nop https://sites.google.com/site/chanizylvetea/
-#config color on
+#config {color} {on}
 #gag {~^\e[0;1;[30|31|32|33|34|35|36|37]m\e[1;[30|31|32|33|34|35|36|37]m^}
 #gag {~^\e[0;[30|31|32|33|34|35|36|37]m\e[[30|31|32|33|34|35|36|37]m^}
 
