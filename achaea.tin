@@ -12,12 +12,15 @@
   <088>
 }
 
+#alias eld {eldritchmists}
+
+#alias dir {directory}
 #alias sl {show level}
 #alias ll {info here}
 #alias q {#if {%1} {quest %1 details}; #else quest log;}
-#alias connect {#session achaea achaea.com 23;}
-#alias reload  {#kill all; #read achaea.tin; #config {command echo} {on}}
 
+#event {PROGRAM START} {#session achaea achaea.com 23;}
+#alias reload  {#kill all; #read achaea.tin; #config {command echo} {on}}
 #act {Password correct. Welcome to Achaea.} {#config {command echo} {on}}
 
 #split 1 1
@@ -43,6 +46,12 @@
   {You open your eyes and stretch languidly, feeling deliciously well-rested.}
 } {msg} {
     #line substitute variables #act {$msg} {alert};
+}
+
+#act {You will TIMEOUT in 1 minute unless you do something.} {
+  show level
+  show gold
+  alert
 }
 
 #nop needed for highlighting
